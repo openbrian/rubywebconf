@@ -1,4 +1,6 @@
-<h1>This user has not tweeted yet</h1>
+<% if @tweets.empty? %>
+  <h1>This user has not tweeted yet</h1>
+<% end %>
 
 <% @tweets.each do |tweet| %>
   <div class='tweet'><%= tweet.body %></div>

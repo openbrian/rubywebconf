@@ -10,6 +10,7 @@ Feature: My twitter stream
     When I go to my home page
     Then I should see 1 tweet
     And I should see "BJ is so smart"
+    And I should not see "This user has not tweeted yet"
 
   Scenario: Multiple tweets show up in reverse chronological order
     Given I have tweeted "BJ is so smart"
