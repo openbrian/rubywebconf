@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the new view_home_page page/
       new_view_home_page_path
+    when /my home page/
+      tweets_path
 
 
     # Add more mappings here.
