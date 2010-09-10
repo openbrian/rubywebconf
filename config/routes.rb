@@ -1,6 +1,8 @@
 Twitter20::Application.routes.draw do
   root :to => 'main#home'
   resources :tweets
+  
+  # match 'users/:name/tweets' => 'tweets#index', :as => :user_tweets
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

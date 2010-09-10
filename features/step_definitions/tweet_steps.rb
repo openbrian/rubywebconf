@@ -16,6 +16,12 @@ Given /^(\d+) minutes later I tweeted "([^"]*)"$/ do |num_minutes, body|
   Tweet.create! :body => body
 end
 
+Given /^"([^"]*)" has tweeted "([^"]*)"$/ do |name, body|
+  user = User.find_or_create_by_name(name)
+  p user
+  user.tweets.create! :body => body
+end
+
 Then /^I should see the following tweets in order:$/ do |table|
   tweets = (Nokogiri(page.body) / '.tweet').map(&:content)
   tweets.should == table.hashes.map {|t| t['tweet'] }

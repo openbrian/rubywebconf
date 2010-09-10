@@ -14,7 +14,8 @@ module NavigationHelpers
       new_view_home_page_path
     when /my home page/
       tweets_path
-
+    when /\"(\S+)\"\'s twitter stream/
+      tweet_path($1)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
