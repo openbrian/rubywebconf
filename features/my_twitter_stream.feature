@@ -1,4 +1,7 @@
 Feature: My twitter stream
+  Background:
+    Given I am logged in as 'bj'
+
   Scenario: Blank stream
     Given an empty tweet stream
     When I go to my home page

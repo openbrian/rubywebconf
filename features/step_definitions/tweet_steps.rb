@@ -8,17 +8,16 @@ Then /^I should see (\d+) tweets?$/ do |num_tweets|
 end
 
 Given /^I have tweeted "([^"]*)"$/ do |body|
-  Tweet.create! :body => body
+  Tweet.create! :body => body, :user => User.find_by_name!($username)
 end
 
 Given /^(\d+) minutes later I tweeted "([^"]*)"$/ do |num_minutes, body|
   Timecop.travel num_minutes.to_i.from_now
-  Tweet.create! :body => body
+  Tweet.create! :body => body, :user => User.find_by_name!($username)
 end
 
 Given /^"([^"]*)" has tweeted "([^"]*)"$/ do |name, body|
   user = User.find_or_create_by_name(name)
-  p user
   user.tweets.create! :body => body
 end
 

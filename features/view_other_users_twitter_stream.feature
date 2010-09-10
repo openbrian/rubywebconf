@@ -1,4 +1,7 @@
 Feature: View other users twitter stream
+  Background:
+    Given I am logged in as 'pat'
+
   Scenario: Shows that user's tweets but not mine
     Given I have tweeted "this is my tweet"
     And "bj" has tweeted "BJ is so smart"
